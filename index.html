@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DEEPANSHU TENNIS EXPERT™</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#02070f;
+overflow-x:hidden;
+color:#fff;
+
+}
+
+body:before{
+
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+left:0;
+top:0;
+background:
+radial-gradient(circle at top,#00ff8845,transparent 45%),
+radial-gradient(circle at bottom,#00c3ff30,transparent 40%),
+linear-gradient(135deg,#01040a,#05111f,#02070f);
+z-index:-3;
+
+}
+
+body:after{
+
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+left:0;
+top:0;
+background-image:
+linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+background-size:40px 40px;
+animation:gridMove 18s linear infinite;
+z-index:-2;
+
+}
+
+@keyframes gridMove{
+
+0%{transform:translateY(0);}
+100%{transform:translateY(40px);}
+
+}
+
+.ball{
+
+position:fixed;
+border-radius:50%;
+background:#d8ff00;
+box-shadow:0 0 30px #d8ff00;
+opacity:.18;
+z-index:-1;
+
+}
+
+.ball1{
+
+width:140px;
+height:140px;
+left:-40px;
+top:20%;
+animation:float1 8s ease-in-out infinite;
+
+}
+
+.ball2{
+
+width:90px;
+height:90px;
+right:20px;
+top:65%;
+animation:float2 7s ease-in-out infinite;
+
+}
+
+@keyframes float1{
+
+50%{
+transform:translateY(-40px) rotate(180deg);
+}
+
+}
+
+@keyframes float2{
+
+50%{
+transform:translateY(30px) rotate(-180deg);
+}
+
+}
+
+.container{
+
+width:92%;
+max-width:450px;
+margin:auto;
+padding:30px 0 40px;
+
+}
+
+.logo{
+
+width:120px;
+height:120px;
+margin:auto;
+display:block;
+border-radius:50%;
+border:3px solid #00ff88;
+box-shadow:0 0 25px #00ff88;
+
+}
+
+.hero{
+
+margin-top:20px;
+padding:28px;
+text-align:center;
+border-radius:24px;
+background:rgba(255,255,255,.07);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.12);
+box-shadow:0 0 30px rgba(0,255,136,.18);
+
+}
+
+.badge{
+
+display:inline-block;
+padding:8px 18px;
+background:#00ff88;
+color:#000;
+font-weight:700;
+border-radius:30px;
+font-size:13px;
+
+}
+
+h1{
+
+margin-top:18px;
+font-size:34px;
+font-weight:800;
+line-height:1.2;
+color:#fff;
+text-shadow:0 0 20px #00ff88;
+animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+50%{
+
+text-shadow:
+0 0 8px #00ff88,
+0 0 25px #00ff88,
+0 0 40px #00ff88;
+
+}
+
+}
+
+.sub{
+
+margin-top:15px;
+font-size:15px;
+line-height:28px;
+color:#ddd;
+
+}
+
+.highlight{
+
+color:#00ff88;
+font-weight:700;
+
+}
+
+.cards{
+
+margin-top:28px;
+display:grid;
+grid-template-columns:1fr;
+gap:16px;
+
+}
+
+.card{
+
+padding:20px;
+border-radius:18px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+box-shadow:0 0 25px rgba(0,255,136,.25);
+
+}
+
+.card h3{
+
+color:#00ff88;
+margin-bottom:8px;
+
+}
+
+.stats{
+
+margin-top:26px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+
+}
+
+.stat{
+
+padding:16px 10px;
+border-radius:16px;
+background:rgba(255,255,255,.06);
+text-align:center;
+
+}
+
+.stat h2{
+
+color:#00ff88;
+
+}
+
+.join{
+
+margin-top:30px;
+
+}
+
+.join a{
+
+display:block;
+text-align:center;
+padding:18px;
+text-decoration:none;
+color:#000;
+font-weight:800;
+font-size:18px;
+background:linear-gradient(90deg,#00ff88,#00d4ff);
+border-radius:60px;
+box-shadow:0 0 35px rgba(0,255,136,.55);
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.04);
+
+box-shadow:0 0 45px #00ff88;
+
+}
+
+}
+
+.footer{
+
+margin-top:25px;
+text-align:center;
+font-size:13px;
+color:#aaa;
+
+}
+
+.popup{
+
+position:fixed;
+left:18px;
+bottom:18px;
+padding:12px 18px;
+border-radius:15px;
+background:#111;
+border:1px solid #00ff88;
+display:none;
+font-size:13px;
+box-shadow:0 0 20px rgba(0,255,136,.3);
+
+}
+
+@media(max-width:420px){
+
+h1{
+
+font-size:28px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="ball ball1"></div>
+<div class="ball ball2"></div>
+
+<div class="container">
+
+<img src="logo.png" class="logo">
+
+<div class="hero">
+
+<div class="badge">ATP • WTA • GRAND SLAM</div>
+
+<h1>DEEPANSHU<br>TENNIS EXPERT™</h1>
+
+<p class="sub">
+
+<span class="highlight">Professional Tennis Analysis</span><br>
+
+Daily Expert Insights • Fast Updates • Premium Community
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🎾 Expert Analysis</h3>
+
+<p>Accurate match previews with professional insights.</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ Live Updates</h3>
+
+<p>Stay ahead with instant tennis alerts.</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏆 Grand Slam Coverage</h3>
+
+<p>ATP, WTA and all major tournaments.</p>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<h2>1000+</h2>
+
+<small>Matches</small>
+
+</div>
+
+<div class="stat">
+
+<h2>88%</h2>
+
+<small>Accuracy</small>
+
+</div>
+
+<div class="stat">
+
+<h2>12K+</h2>
+
+<small>Members</small>
+
+</div>
+
+</div>
+
+<div class="join">
+
+<a href="https://t.me/+_IHVaeoStyA5MTI1" target="_blank">
+
+🚀 JOIN VIP TELEGRAM
+
+</a>
+
+</div>
+
+<div class="footer">
+
+DEEPANSHU TENNIS EXPERT™<br>
+
+Play Smart • Stay Ahead
+
+</div>
+
+</div>
+
+</div>
+
+<div class="popup" id="popup"></div>
+
+<script>
+
+const users=[
+"Aman",
+"Rahul",
+"Vikas",
+"Rohit",
+"Ankit",
+"Deepak",
+"Vivek",
+"Abhishek"
+];
+
+const popup=document.getElementById("popup");
+
+function liveJoin(){
+
+let name=users[Math.floor(Math.random()*users.length)];
+
+popup.innerHTML="🎉 "+name+" joined VIP";
+
+popup.style.display="block";
+
+setTimeout(()=>{
+
+popup.style.display="none";
+
+},3000);
+
+}
+
+setInterval(liveJoin,5000);
+window.addEventListener("load",()=>{
+
+setTimeout(liveJoin,1500);
+
+});
+
+/* Counter Animation */
+
+const counters=document.querySelectorAll(".stat h2");
+
+counters.forEach(counter=>{
+
+const target=counter.innerText;
+
+let value=0;
+
+let end=parseInt(target.replace(/\D/g,""));
+
+let suffix=target.replace(/[0-9]/g,"");
+
+let speed=Math.max(10,Math.floor(end/80));
+
+const update=()=>{
+
+value+=speed;
+
+if(value>=end){
+
+counter.innerHTML=end+suffix;
+
+return;
+
+}
+
+counter.innerHTML=value+suffix;
+
+requestAnimationFrame(update);
+
+}
+
+update();
+
+});
+
+/* Mouse Glow */
+
+const glow=document.createElement("div");
+
+glow.style.position="fixed";
+
+glow.style.width="180px";
+
+glow.style.height="180px";
+
+glow.style.borderRadius="50%";
+
+glow.style.pointerEvents="none";
+
+glow.style.background="radial-gradient(circle,rgba(0,255,136,.22),transparent 70%)";
+
+glow.style.transform="translate(-50%,-50%)";
+
+glow.style.zIndex="0";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX+"px";
+
+glow.style.top=e.clientY+"px";
+
+});
+
+/* Card Animation */
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{
+
+opacity:0,
+
+transform:"translateY(40px)"
+
+},
+
+{
+
+opacity:1,
+
+transform:"translateY(0)"
+
+}
+
+],{
+
+duration:700,
+
+fill:"forwards"
+
+});
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".card,.stat,.join,.hero").forEach(el=>{
+
+observer.observe(el);
+
+});
+
+</script>
+
+</body>
+</html>
